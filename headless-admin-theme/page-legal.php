@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Legal Page
+ * Template Name: Legal
  * description: >-
   Page template for legal and policy pages
  */
