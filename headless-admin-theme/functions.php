@@ -74,3 +74,12 @@ function wc_rest_user_endpoint_handler($request = null)
     }
     return new WP_REST_Response($response, 123);
 }
+
+// Exclude draft posts from ACF relationship fields
+add_filter('acf/fields/relationship/query', 'relationship_options_filter', 10, 3);
+
+function relationship_options_filter($options, $field, $the_post)
+{
+    $options['post_status'] = array('publish');
+    return $options;
+}
